@@ -1,12 +1,8 @@
-package com.oauth.test;
+package com.restapi.test;
 
-import static org.junit.Assert.assertTrue;
+import com.restapi.config.ResourceServerApplication;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +12,10 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.oauth.config.ResourceServerApplication;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.Assert.assertTrue;
 
 //Before running this test make sure authorization server is running   
 
