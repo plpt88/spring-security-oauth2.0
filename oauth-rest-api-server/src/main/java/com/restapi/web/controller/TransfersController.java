@@ -47,7 +47,7 @@ public class TransfersController {
 
     // API - write
     @PreAuthorize("#oauth2.hasScope('write')")
-    @RequestMapping(method = RequestMethod.POST, value = "/deposit")
+    @RequestMapping(method = RequestMethod.POST, value = "/deposits")
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
     public Transfer deposit(@RequestParam String usage, @RequestParam BigDecimal amount, @RequestParam String currency,
