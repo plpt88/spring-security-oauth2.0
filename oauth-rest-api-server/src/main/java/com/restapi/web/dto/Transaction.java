@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 
 @Entity
-public class Transfer {
+public class Transaction {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long unique_id;
@@ -21,11 +21,11 @@ public class Transfer {
     private String status;
     private String date;
 
-    public Transfer() {
+    public Transaction() {
         super();
     }
 
-    public Transfer(final long unique_id, final String transaction_id) {
+    public Transaction(final long unique_id, final String transaction_id) {
         super();
 
         this.unique_id = unique_id;
