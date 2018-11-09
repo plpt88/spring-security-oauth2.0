@@ -57,18 +57,15 @@ public class TransactionsController {
                                @RequestParam int funding_method_id) {
         Transaction transaction = new Transaction();
 
-        transaction.setUnique_id(Long.parseLong(randomNumeric(10)));
-        transaction.setTransaction_id("MerchantTx" + randomNumeric(2));
-        transaction.setUsage("Deposit");
+        transaction.setId(Long.parseLong(randomNumeric(10)));
         transaction.setAmount(amount);
         transaction.setCurrency(currency);
-        transaction.setSource_wallet_id("customer@ezeewallet.com");
-        transaction.setReturn_success_url("http://example.com/success");
-        transaction.setReturn_failure_url("http://example.com/failure");
         transaction.setStatus("approved");
+        transaction.setDescription("Deposit");
+        transaction.setNotes("TEST Notes");
 
         // Set current date
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         transaction.setDate(dateFormat.format(date));
 
