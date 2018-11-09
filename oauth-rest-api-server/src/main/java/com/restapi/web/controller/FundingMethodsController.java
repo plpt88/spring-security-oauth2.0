@@ -40,7 +40,7 @@ public class FundingMethodsController {
     // API - write
     @PreAuthorize("#oauth2.hasScope('write')")
     @RequestMapping(method = RequestMethod.POST, value = "/funding_methods")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public FundingMethod addFundingMethod(@RequestParam String name, @RequestParam String status, @RequestParam String type,
                                  @RequestParam String bin, @RequestParam String tail,

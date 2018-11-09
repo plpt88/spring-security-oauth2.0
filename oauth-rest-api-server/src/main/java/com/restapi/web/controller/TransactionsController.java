@@ -51,7 +51,7 @@ public class TransactionsController {
     // API - write
     @PreAuthorize("#oauth2.hasScope('write')")
     @RequestMapping(method = RequestMethod.POST, value = "/deposits")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Transaction deposit(@RequestParam BigDecimal amount, @RequestParam String currency,
                                @RequestParam int funding_method_id) {

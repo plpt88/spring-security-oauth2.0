@@ -25,9 +25,17 @@ public class UserController {
     public User getUserInfo() {
         User user = new User();
         user.setId(Long.parseLong(randomNumeric(10)));
+        user.setFirstname("John");
+        user.setLastname("Doe");
         user.setEmail("mobileuser@ezeewallet.com");
         user.setBalance(new BigDecimal(50.00));
         user.setCurrency("EUR");
+        user.setPhone("+5555555555");
+        user.setBilling_country("DE");
+        user.setBilling_city("Berlin");
+        user.setAddress1("Address 1");
+        user.setBilling_zipcode("15000");
+
 
         return user;
     }
