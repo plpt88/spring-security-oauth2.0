@@ -8,7 +8,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,7 +52,7 @@ public class TransactionsController {
     @RequestMapping(method = RequestMethod.POST, value = "/deposits")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Transaction deposit(@RequestParam BigDecimal amount, @RequestParam String currency,
+    public Transaction deposit(@RequestParam String amount, @RequestParam String currency,
                                @RequestParam int funding_method_id) {
         Transaction transaction = new Transaction();
 
