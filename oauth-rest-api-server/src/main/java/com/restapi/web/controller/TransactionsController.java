@@ -64,7 +64,7 @@ public class TransactionsController {
         transaction.setNotes("TEST Notes");
 
         // Set current date
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
         transaction.setDate(dateFormat.format(date));
 
