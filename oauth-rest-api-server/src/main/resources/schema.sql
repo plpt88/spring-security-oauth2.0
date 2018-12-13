@@ -5,10 +5,10 @@ create table transfers (
   usage VARCHAR(255),
   amount REAL(10),
   currency VARCHAR(255),
-  source_wallet_id VARCHAR(255),
+  status VARCHAR(255),
+  funding_method_id INT(10),
   return_success_url VARCHAR(255),
   return_failure_url VARCHAR(255),
-  status VARCHAR(255),
   date DATETIME
 );
 
@@ -20,3 +20,10 @@ create table funding_methods (
   tail VARCHAR(255),
   expiration_date DATETIME
 );
+
+create table fees (
+    id VARCHAR(255) PRIMARY KEY,
+    fixed_amount REAL(10),
+    percentage REAL(10),
+    category VARCHAR(255)
+)

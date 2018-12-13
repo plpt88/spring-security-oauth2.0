@@ -11,7 +11,9 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String amount;
+    private String fee_amount;
     private String currency;
+    private Integer funding_method_id;
     private String status;
     private String description;
     private String notes;
@@ -21,7 +23,7 @@ public class Transaction {
         super();
     }
 
-    public Transaction(final long id, final String transaction_id) {
+    public Transaction(final long id) {
         super();
 
         this.id = id;
@@ -81,5 +83,21 @@ public class Transaction {
 
     public String getNotes() {
         return notes;
+    }
+
+    public void setFee_amount(String fee_amount) {
+        this.fee_amount = fee_amount;
+    }
+
+    public String getFee_amount() {
+        return fee_amount;
+    }
+
+    public void setFunding_method_id(Integer funding_method_id) {
+        this.funding_method_id = funding_method_id;
+    }
+
+    public Integer getFunding_method_id() {
+        return funding_method_id;
     }
 }
