@@ -8,7 +8,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,18 +52,12 @@ public class TransactionsController {
     @RequestMapping(method = RequestMethod.POST, value = "/deposits")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Transaction deposit(@RequestParam String amount, @RequestParam Double percentage,
-                               @RequestParam String currency, @RequestParam Integer funding_method_id) {
+    public Transaction deposit(@RequestParam String amount, @RequestParam String currency,
+                               @RequestParam Integer funding_method_id) {
         Transaction transaction = new Transaction();
 
         transaction.setId(Long.parseLong(randomNumeric(10)));
         transaction.setAmount(amount);
-
-        // Set Fee
-        String feeAmount = new BigDecimal(amount).multiply(BigDecimal.valueOf(percentage)
-                .divide(BigDecimal.valueOf(100))).toPlainString();
-        transaction.setFee_amount(feeAmount);
-
         transaction.setCurrency(currency);
         transaction.setFunding_method_id(funding_method_id);
         transaction.setStatus("approved");
