@@ -10,7 +10,7 @@ public class Fee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private Integer fixed_amount;
+    private String fixed_amount;
     private String percentage;
     private String category;
 
@@ -18,7 +18,7 @@ public class Fee {
         super();
     }
 
-    public Fee(final Integer fixed_amount, final String percentage, final String category) {
+    public Fee(final String fixed_amount, final String percentage, final String category) {
         super();
 
         this.fixed_amount = fixed_amount;
@@ -34,11 +34,11 @@ public class Fee {
         return id;
     }
 
-    public void setFixed_amount(Integer fixed_amount) {
+    public void setFixed_amount(String fixed_amount) {
         this.fixed_amount = fixed_amount;
     }
 
-    public Integer getFixed_amount() {
+    public String getFixed_amount() {
         return fixed_amount;
     }
 

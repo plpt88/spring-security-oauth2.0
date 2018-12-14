@@ -41,7 +41,7 @@ public class FeesController {
     @RequestMapping(method = RequestMethod.POST, value = "/fees")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Fee addFee(@RequestParam Integer fixed_amount, @RequestParam String percentage, @RequestParam String category) {
+    public Fee addFee(@RequestParam String fixed_amount, @RequestParam String percentage, @RequestParam String category) {
         Fee fee = new Fee();
 
         fee.setId(Long.parseLong(randomNumeric(2)));
